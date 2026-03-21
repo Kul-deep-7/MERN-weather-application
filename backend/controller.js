@@ -28,3 +28,5 @@ try {
     
 }
 }
+
+export {getAPIData}
