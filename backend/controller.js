@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const getAPIData = async function (req, res) {
 try {
-        const {city,} = req.body
+        const {city} = req.body
     
         if(!city){
             return res.status(400).json({ message: "City is required" })
