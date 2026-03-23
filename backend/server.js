@@ -12,10 +12,15 @@ const router = Router()
 // })
 
 
+const corsOption = {
+    origin: "http://localhost:5173"
+}
 
-app.use(cors({
-    origin: "http://localhost:3000"
-}))
+app.use(cors(
+    corsOption
+))
+
+
 
 app.use(express.json())
 
@@ -25,7 +30,7 @@ app.use(express.urlencoded({extended: true}))
 
 //routes
 
-router.route("/weather").post(getAPIData)
+router.route("/weather").get(getAPIData)
 
 //app router / connect router
 app.use("/api", router)
