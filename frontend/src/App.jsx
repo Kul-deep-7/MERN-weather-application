@@ -5,7 +5,7 @@ function App() {
   const [city,setCity ] = useState('')
   const [loading, setLoading] = useState(false)
   const [temperature, setTemperature] = useState('')
-
+  const [cityName, setcityName]= useState('')
 
   const handleSubmit = async()=>{
     if (!city) {
@@ -14,6 +14,7 @@ function App() {
     }
     setTemperature('')
     setLoading(true)
+    setcityName(city)
   
     try {
       const res = await axios.get(`http://localhost:5000/api/weather?city=${city}`)
@@ -42,13 +43,13 @@ function App() {
     {loading ? (<p>Loading...</p> 
     ):( 
       <>
-      <h1>City : {city}</h1>
+      <h1>City : {cityName}</h1>
       {temperature ? (
         <h3>{temperature}°celsius</h3>
         )   :  loading ? 
         (<p>Loading...</p>
         )   :   
-        (`no data available for ${city}`
+        (`no data available for ${cityName}`
       )}
       </>
     )}
