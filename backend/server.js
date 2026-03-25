@@ -13,7 +13,8 @@ const router = Router()
 
 
 const corsOption = {
-    origin: "http://localhost:5173"
+    origin: "https://mern-weather-application-1.onrender.com"
+    
 }
 
 app.use(cors(
