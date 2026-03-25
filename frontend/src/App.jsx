@@ -18,7 +18,7 @@ function App() {
     setcityName(city)
   
     try {
-      const res = await axios.get(`http://localhost:5000/api/weather?city=${city}`)
+      const res = await axios.get(`https://mern-weather-application.onrender.com/api/weather?city=${city}`)
       const tempK = res.data.API_data.main.temp
       const tempC = ( tempK - 273.15).toFixed(2)
       setTemperature(tempC)
