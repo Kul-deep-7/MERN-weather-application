@@ -31,26 +31,59 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center px-4 py-6">
 
-      <div className="w-full max-w-md backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-8 text-white transition-all duration-500">
+      <div className="
+      w-full 
+      max-w-md 
+      sm:max-w-lg
+      backdrop-blur-xl 
+      bg-white/10 
+      border border-white/20 
+      rounded-2xl sm:rounded-3xl 
+      shadow-2xl 
+      p-5 sm:p-8 
+      text-white 
+      transition-all duration-500
+      ">
 
-        <h1 className="text-3xl font-semibold text-center mb-6 tracking-wide">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-center mb-5 sm:mb-6 tracking-wide">
           Weather App
         </h1>
 
-        <div className="flex gap-2 mb-6">
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <input
             type="text"
             placeholder="Enter city name..."
             value={city}
             onChange={(e)=>setCity(e.target.value)}
-            className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-300 transition"
+            className="
+            flex-1 
+            bg-white/10 
+            border border-white/20 
+            rounded-xl 
+            px-4 py-3 
+            focus:outline-none 
+            focus:ring-2 
+            focus:ring-blue-400 
+            placeholder-gray-300 
+            transition
+            "
           />
 
           <button
             onClick={handleSubmit}
-            className="px-5 py-3 bg-blue-500 hover:bg-blue-600 rounded-xl font-medium transition duration-300 shadow-lg hover:shadow-blue-500/40"
+            className="
+            w-full sm:w-auto
+            px-5 py-3 
+            bg-blue-500 
+            hover:bg-blue-600 
+            rounded-xl 
+            font-medium 
+            transition duration-300 
+            shadow-lg 
+            hover:shadow-blue-500/40
+            "
           >
             Search
           </button>
@@ -62,24 +95,24 @@ function App() {
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
             </div>
           ) : (
-            <div className="text-center space-y-3 animate-fadeIn">
+            <div className="text-center space-y-2 sm:space-y-3 animate-fadeIn">
 
-              <h2 className="text-xl text-gray-300">
+              <h2 className="text-lg sm:text-xl text-gray-300 capitalize">
                 {cityName}
               </h2>
 
               {temperature ? (
                 <>
-                  <h1 className="text-6xl font-light tracking-tight">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight">
                     {temperature}°
                   </h1>
 
-                  <p className="text-lg text-gray-300 capitalize">
+                  <p className="text-base sm:text-lg text-gray-300 capitalize">
                     {weather}
                   </p>
                 </>
               ) : (
-                <p className="text-red-300">
+                <p className="text-red-300 text-sm sm:text-base">
                   No data available for {cityName}
                 </p>
               )}
@@ -95,7 +128,6 @@ function App() {
 }
 
 export default App
-
 
 
 /*
